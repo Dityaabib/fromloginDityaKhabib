@@ -1,0 +1,188 @@
+
+/* berfungsi untuk mengubah tampilan font_family menjadi text tulisan biasa Jika sans-serift di hapus maka tampilan font akan berbeda dari yang ada di website ini */
+* {
+  font-family: sans-serif;
+}
+
+/* fungsi dibagian ini yang pertama itu sebagai tempat begroud belakang from login yaitu sebuag gambar  dan bisa menjadi besar dan pas di website karena terdapatnya whdth,height,dan agar posisinya hannya 1 gambar itu menggunakan code di bagian bacgroud no-repead,biar ketengah menggunakan bacgroud-posisi:center dan yang ke dua elemen bisa menegah atau tempat from bisa menegah dikarenakan terdapat adanya display:flex, justify-content:center,alight-center dan agar di responsif gambar tetep center itu meggunakan code bacgroud-size:cover dan itu bisa diganti dengan yanglainnya sesuwai keinginan kita :) */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: url(img/1.avif)  no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: animateBg 5s linear infinite;
+}
+
+/* sdibagian ini saya tambahkan agar di bagroud gambar nya terdapat kesan warna yang berbeda beda dan berdurasi dikarenakan  terdapat code yaitu animation..yang terdapat di section  */
+@keyframes animateBg {
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+
+
+/* dibagian login-box ini menjadi fungsi sebagai mencenter atau membuat menegah suatu elemen yitu elemen yang ada di dalam lgin-box ini yaitu bisa center karena posisition: relative dan display-flex dan justifay dan "alight-center sebagai menegah dari bagian atas dan bawah kalau justify fungsi menegahkan dapi pinggir dan samping seperti center" dan bisa ngeblur karena adanya backdrop-filter:blur saya kasi 50px agar memiliki kesan bagus dan saya kasi bacgroud:transparant agar bagus :) */
+.login-box {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  border-radius: 20px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  backdrop-filter: blur(50px);
+}
+
+/* okee dibagian h2 ini fungsi memberikan kesan tulisan besar di bagian h2 yaitu dibagian text "login yang terdapat di atas sendiri dan center dikarenKn text-align:center"dan tau sendiri besar karena apa yaaa besar karena font-size :)*/
+h2 {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+}
+
+
+/* dibagian input box ini berfungsi sebagai tempat dimana menjadi bapak atau pelindung dari icon dan input yang tertera di website atau di tampilannya dan berfungsi untuk menampilkan berder bawah atau butom yaitu senilai 2px dan berwarna putih atau white dan saya kasi position relatif agar elemen atau tulisan email dan passsword di bagian laber agar titak berpindah pindah  */
+.input-box {
+  position: relative;
+  width: 310px;
+  margin: 30px;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+/* dibagian ini juga agak menyambung di bagian input-box yang diatas ini berfungsi agar menjadikan tulisan yang ada di label ini bisa menjadi bagus  top 50% berfungsi agar tulisan agak ke atas dan tidak kebawah lagi seperti semula left berfungsi agar tulisan agak ada kesan ke samping dikit dan memiliki font-size: 1em "transform: translateY(-50%); fungsi dari ini agar memiliki pedding dari bawah agar bisa keatas dikit dan memberikan -50"*/
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: white;
+  transition: 0.5s;
+}
+
+/* ini berfungsi agar saat kita menekan atau kita ingin mengisi email dan passwoard tilisan yanga da di situ akan memberikan animasi yaitu akan keatas dan ter durasi yaitu dengan kelambatan 0.5s yang ada di labar atas dan memberikan kesan keatas yaitu senilai -5px */
+.input-box input:focus ~ label,
+.input-bok input:valid ~ label {
+  top: -5px;
+}
+
+/* disini atau dibagian input berguna untuk mengasi width 100% agar full di layar form login dan height senilai 50px agar tidak kebesaran dan megroud transparent agar tidak ada gambar atau begroud di belakang input atau di body nya dan border none berfungsi untuk menghilangkan border seperri 1px solit white gitu adanya border none ini adalah agar mengilangkan border dan outline none ini berfungsi jika mous di arahkan atau ditekan di bagian inputnya makan dia tidak akan mempunyai bordersama sekali dan jika tidak ada otline maka Kketkika mous ditekan di input maka border akan ada seperti warna biru pudar */
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: white;
+}
+
+
+/* dibagian icon ini berfungsi hannya di icon  position: absolute; berfungsi untuk menjadikan posisi agar ke tempat sama persis atau sejajar dengan tulisan email dan memiliki font-size 1.2em agak besar line-height: 57px; berfungsi agar posisi icon agar sejajar persis pas dengan text jika tidak ada line-height: 57px; maka icon akan memiliki posisi keatas dan tidak sejajajr*/
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  color: white;
+  font-size: 1.2em;
+  line-height: 57px;
+}
+
+/* dibagian remember-forgotini tempat dimana input cekbox dan tulisan link berada terdapat terdapat margin agar membuat benggang atau jarak di luar dan memiliki font 0.9em dan color putih dan tidak lupa agaar input dan link bisa berjarak karena danya display dan justify space_batween*/
+.remember-forgot {
+  margin: -15px 0 15px;
+  font-size: 0.9em;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* dibagian input ini berfungsi hannya memberi margin right atau bagian kanan 3px */
+.remember-forgot label input {
+  margin-right: 3px;
+}
+
+/* dibagian link atau tag a ini cuma memberikan warna putih atau white dan menghilangkan garis bawah yang aada di link dengan menggunakan code  text-decoration: none; */
+.remember-forgot a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* dibagian ini berfungsi agar saat mous menyentuh dibagian input cekbox dan link maka akan terdapat garis bawak di bawahnya dikarenakan adanya   text-decoration: underline; */
+.remember-forgot:hover {
+  text-decoration: underline;
+}
+
+/* dibagian ini memiliki width 100% dan height 35px dan bacgroud pertamanya adalah white atau putih  tidak memiliki border karena adanya border none  font-family: inherit; berfungsi untuk menjadikan tulisan libih ciut atau kurus beda jauh dengan bold atau 900 margin top agar memiliki jarak atas senilai 20px */
+button {
+  width: 100%;
+  height: 35px;
+  background-color: white;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-size: 19px;
+  font-family: inherit;
+  margin-top: 20px;
+}
+
+/* ini hannya memberikan kesan lebih coklat dari bacgrout pertama yang warna pertamanya adalah white */
+button:hover {
+ background-color: #f2f0f0;
+}
+
+/* dibagian ini pula berfungsi agar font dari tag a dan p bisa memliki font senilai 0.9em ngecenter adanya  text-align: center; di margin nya tersebut memberikan jarak atas dan bawah */
+.register-link {
+  font-size: 0.9em;
+  color: white;
+  text-align: center;
+margin-top: 20px;
+margin-bottom: 30px;
+}
+
+/* di bagian ini juga berfungsi sebagai tempat dimana p dan a yang berfungsi tag a agar tidak ada garis bawah dan memiliki fon-weight 600 lumayan besar dan gendut */
+.register-link p a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* di a ini memiliki font italic yaitu TULISAN MIRING dan besar tulisan 16px */
+.register-link a {
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* dibagian a hover yaitu memberikan kesai yaitu mous didekatkan akan memberikan garis bawah  di tag a saja */
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+/* dibagian ini menurut saya paling penting dimana dibagian ini berfungsi untuk meresponsif login-box atau bapak dari segala from yang ada di website ini dam maksimal dia akan berubah pada saat menginjak responsif sbesar 360px dan akan memiliki fungsi atau berrubah sesuwai dengan    width: 100%;
+    height: 100vh;
+    border: none;
+    border-radius: 0; 
+    dan juga terdapt input box yaitu width senilai atau akan berubag nilai sebesar 290px */
+@media (max-width: 360px) {
+  .login-box {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    border-radius: 0;
+  }
+
+  .input-box {
+    width: 290px;
+  }
+}
+
+
+/* SEKIAN PENJELASAN DARI SAYA TERIMAKASIH */
